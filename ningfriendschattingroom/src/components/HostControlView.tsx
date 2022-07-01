@@ -21,7 +21,7 @@ import {PollContext} from './PollContext';
 const HostControlView = () => {
   const {sendControlMessage} = useContext(chatContext);
   const {primaryColor} = useContext(ColorContext);
-  const {question, setQuestion} = useContext(PollContext);
+  const {question, setQuestion, answers, setAnswers} = useContext(PollContext);
 
   return (
     <>
@@ -46,6 +46,23 @@ const HostControlView = () => {
             onChangeText={setQuestion}
             placeholder="Poll Question"
           />
+          <br />
+          {answers.map((answer: {option: string; votes: number}, i: number) => (
+            <div key={i}>
+              <br />
+              <TextInput
+                value={answer.option}
+                onChangeText={(value) =>
+                  setAnswers([
+                    ...answers.slice(0, i),
+                    {Option: value, votes: 0},
+                    ...answers.slice(i + 1),
+                  ])
+                }
+                placeholder={`Poll Answer ${i + 1}`}
+              />
+            </div>
+          ))}
         </View>
       </View>
     </>
