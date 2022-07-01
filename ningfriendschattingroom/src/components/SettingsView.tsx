@@ -62,6 +62,7 @@ const style = StyleSheet.create({
     maxWidth: 300,
     backgroundColor: $config.SECONDARY_FONT_COLOR,
     flex: 1,
+    overflow: 'scroll',
   },
   settingsViewNative: {
     position: 'absolute',
