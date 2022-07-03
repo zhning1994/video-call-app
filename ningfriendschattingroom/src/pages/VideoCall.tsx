@@ -45,6 +45,7 @@ import Toast from '../../react-native-toast-message';
 import {NetworkQualityProvider} from '../components/NetworkQualityContext';
 import {LiveStreamContextProvider} from '../components/livestream';
 import ScreenshareConfigure from '../subComponents/screenshare/ScreenshareConfigure';
+import Poll from '../components/Poll';
 
 const useChatNotification = (
   messageStore: string | any[],
@@ -385,6 +386,7 @@ const VideoCall: React.FC = () => {
                         isHost={isHost}>
                         {callActive ? (
                           <View style={style.full}>
+                            <Poll />
                             <NotificationControl
                               setSidePanel={setSidePanel}
                               chatDisplayed={sidePanel === SidePanelType.Chat}

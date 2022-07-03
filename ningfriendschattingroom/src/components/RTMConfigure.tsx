@@ -28,6 +28,7 @@ import {Platform} from 'react-native';
 import {backOff} from 'exponential-backoff';
 import events from './RTMEvents';
 import {filterObject} from '../utils';
+import {PollContext} from './PollContext';
 
 export enum UserType {
   Normal,
@@ -45,11 +46,13 @@ const stringifyPayload = (
   source: messageSourceType,
   type: messageActionType,
   msg: string,
+  opt?: {},
 ) => {
   return JSON.stringify({
     source,
     type,
     msg,
+    opt,
   });
 };
 
@@ -85,6 +88,7 @@ const RtmConfigure = (props: any) => {
   const [login, setLogin] = useState<boolean>(false);
   const [userList, setUserList] = useState<{[key: string]: any}>({});
   const [onlineUsersCount, setTotalOnlineUsers] = useState<number>(0);
+  const {setQuestion, setAnswers, setIsModalOpen} = useContext(PollContext);
 
   let engine = useRef<RtmEngine>(null!);
   let localUid = useRef<string>('');
@@ -463,6 +467,12 @@ const RtmConfigure = (props: any) => {
               case controlMessageEnum.cloudRecordingUnactive:
                 setRecordingActive(false);
                 break;
+              case controlMessageEnum.initiatePoll:
+                const {question, answers} = JSON.parse(text.slice(2));
+                setQuestion(question);
+                setAnswers(answers);
+                setIsModalOpen(true);
+                break;
               case controlMessageEnum.clientRoleChanged:
                 const {payload} = JSON.parse(msg);
                 if (payload && payload?.role) {
@@ -571,12 +581,19 @@ const RtmConfigure = (props: any) => {
     );
   };
 
-  const sendControlMessage = async (msg: string) => {
+  const sendControlMessage = async (msg: string, opt?: {}) => {
     const text = stringifyPayload(
       messageSourceType.Core,
       messageActionType.Control,
       msg,
+      opt,
     );
+    if (msg === '8') {
+      await (engine.current as RtmEngine).sendMessageByChannelId(
+        rtcProps.channel,
+        text,
+      );
+    }
     await (engine.current as RtmEngine).sendMessageByChannelId(
       rtcProps.channel,
       text,
