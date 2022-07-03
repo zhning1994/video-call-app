@@ -54,7 +54,7 @@ interface chatContext {
   privateMessageStore: any;
   sendMessage: (msg: string) => void;
   sendMessageToUid: (msg: string, uid: number) => void;
-  sendControlMessage: (msg: string) => void;
+  sendControlMessage: (msg: string, opt?: {}) => void;
   sendControlMessageToUid: (msg: string, uid: number) => void;
   addOrUpdateLocalUserAttributes: (attributes: RtmAttribute[]) => void;
   broadcastUserAttributes: (
@@ -76,6 +76,7 @@ export enum controlMessageEnum {
   kickUser = '5',
   cloudRecordingActive = '6',
   cloudRecordingUnactive = '7',
+  initiatePoll = '8',
   clientRoleChanged = 'CLIENT_ROLE_CHANGED',
   // TODO move to livestream provider
 }
