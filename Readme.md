@@ -51,4 +51,4 @@ Details of projects :
 
 Thank you ***JavaScript Mastery*** ! He is sharing a lot of good content and real world project knowledge on YouTube. There is a hope for people who want to become developer but without any computer science degree or can't access to universty due to financial issue. Thanks you ***JavaScript Mastery*** has made the world become better :hearts: 
 
-Here is the link of his channel : https://www.youtube.com/c/CodingwithBasir
+Here is the link of his channel : https://www.youtube.com/c/JavaScriptMastery
