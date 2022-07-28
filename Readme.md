@@ -1,4 +1,4 @@
-# Jupiter - Nextjs E-commerce apps 
+# Ning Friends Chatting Room - agora.io Video Call App
 
 ## Hi 👋, I'm Low Zhen Ning
 ========================
@@ -14,43 +14,41 @@
 
 ## Purpose of Project
 
-I noticed that people in React community talk about Next.js, and I have seen many Tech YouTuber talk about it. Next.Js has been praised about its faster development advantage, SEO-friendly as Next.js using SSR(server-side rendering), image optimization, etc. 
+There has been a surge in video call apps since the Covid-19 pandamic period , when social distancing and work from home become a norm. Video call apps become the best tool to interact with friends and family without physically contact. There are some apps like Zoom, Google Meet, WhatsApp, Messenger has been used drastically. I am keen to try build a video call apps which I can customize the layout, add on some fancy features. It would be nice and convenience to have a video call apps that suit our own needs. 
 
-So I would like have to try to build an E-commerce project using Next.js, therefore I can explore more about this framework. Besides that, I am keen to know how an E-commerce web would be setup in real world, from frontend customer interacting page, admin pages to allow admin customize the product and seing report of sales, to serverside and database setup.
+I do searching on Google, Youtube, find out that **Agora.io** is a good platform to create video call app, and most importantly, JavaScript and React.js go together with Agora. Setup of app can be complicated , I need more time to figure it out, and the version of Agora is changing, some method or features has been deprecated.
 
-By doing this project, its not only enchance my knowledge of Next.js, React.js. Web apps authentication can be very confused, with the help of NextAuth.js,saving token, let user stay login, all the issue has been solved. Paypal paying method is used in this project. Payment method setting could be complicated, but successfully setup in the end.
+This app has room of improvement, I need to spend more time on documentation and look for help of some guru on YouTube. Overall, it a good experience of doing video call apps with Agora.io. 
 
-Build another Next.js E-commerce apps again would be my next step, and setup the paying method using Stripe together with Paypal, different UI design would be tried.
 
 ## Layout of Project
 
-![Home](https://user-images.githubusercontent.com/60384726/181482094-3187f777-b608-4b48-a733-44613ec74340.PNG)
-![Product](https://user-images.githubusercontent.com/60384726/181482102-f7eb450a-7d91-405d-b1af-9c432ee4aa3c.PNG)
-![Dashboard](https://user-images.githubusercontent.com/60384726/181482106-6615edb0-1868-49f3-8bda-5287f1e9ad86.PNG)
-![OrderDetails](https://user-images.githubusercontent.com/60384726/181482110-59b3053b-37c0-494f-ba9a-6f00382324a0.PNG)
+![Chat](https://user-images.githubusercontent.com/60384726/181586444-fb2d42c3-18d2-4b51-b9db-8baca61d73ac.PNG)
+![Chat2](https://user-images.githubusercontent.com/60384726/181586470-4d537e55-3662-411b-b8c1-00a05f6869dc.PNG)
+![Chat3](https://user-images.githubusercontent.com/60384726/181586500-cd7e9903-a11c-468b-93c6-b67b08b48673.PNG)
 
 Details of projects : 
-- Source Code : https://github.com/zhning1994/next-mongodb-ecommerce
-- Demo : https://jupiter-nextjs-ecommerce.vercel.app/
+- Source Code : https://github.com/zhning1994/video-call-app
+- Demo : https://agoracallapp.netlify.app/create
+- Agora.io Homepage : https://www.agora.io/en/
 
 ## :rocket: Tools and Technologies For Project
-- Next.js
-- Tailwind Css (I would say it is a shortcut to write CSS, it would be more easy if you understanding plain CSS3)
-- NextAuth.js (for authentication)
-- MongoDB & Mongoose (saving info on database)
-- PayPal (payment method)
-- Cloudinary (upload and save project image on cloud)
+
+- Agora.io
+- JavaScript and React.js framwork
 
 ## How to Use the Project
-There are two roles for this project : **customer** and **admin**.
 
-- For using this apps as customer, using following info to login or can create a new account :
-  - email : user@example.com , password : 123456
-- For using this apps as admin, using following info to login :
-  - email : admin@example.com , password : 123456
+1. Go to https://agoracallapp.netlify.app/create
+2. Enter name of your meeting room, click "Create Meeting", tick restrict host control
+3. It will show out Attendee URL and Host URL, you can copy Attendee URL and share to people who are invited to this meeting
+    1. Attendee can copy and past the link to browser, key in your display name, then click "Join Room" to enter video call room
+4. Click "Start Meeting (as host)"
+5. Key in your display name, then click "Join Room"
+6. Click setting button on upper left corner, you can create voting poll for your attendee and vote
 
 ## Special Thanks to Credits
 
-Thank you ***Bassir Jafarzadeh***! I following his tutorial to build this project. I am so appreciate that he willing to share all his knowledge with everyone on the world. :hearts: 
+Thank you ***JavaScript Mastery*** ! He is sharing a lot of good content and real world project knowledge on YouTube. There is a hope for people who want to become developer but without any computer science degree or can't access to universty due to financial issue. Thanks you ***JavaScript Mastery*** has made the world become better :hearts: 
 
-I learn a lot from his channel, here is the link : https://www.youtube.com/c/CodingwithBasir
+Here is the link of his channel : https://www.youtube.com/c/CodingwithBasir
